@@ -18,7 +18,8 @@ class Questions extends React.Component {
       questions : [],
       unfilteredQuestions: [],
       createQuestion: false,
-      filterApplied: false
+      filterApplied: false,
+      currentFilter: null
     }
   }
 
@@ -38,7 +39,8 @@ class Questions extends React.Component {
         let newQuestions = [...this.state.questions, question]
 
         this.setState({
-          questions: newQuestions
+          questions: newQuestions,
+          unfilteredQuestions: newQuestions
         }, () => console.log(this.state))
       });
     });
@@ -68,6 +70,13 @@ class Questions extends React.Component {
     this.setState({
       ...this.state,
       createQuestion: true
+    });
+  }
+
+  closeModal() {
+    this.setState({
+      ...this.state,
+      createQuestion: false
     });
   }
 
@@ -109,7 +118,7 @@ class Questions extends React.Component {
     this.setState({
       ...this.state,
       filterApplied: true,
-      unfilteredQuestions: questions,
+      currentFilter: filter,
       questions: filteredQuestions
     })
   }
@@ -118,6 +127,7 @@ class Questions extends React.Component {
     this.setState({
       ...this.state,
       filterApplied: false,
+      currentFilter: null,
       questions: this.state.unfilteredQuestions,
       unfilteredQuestions: [],
     })
@@ -139,7 +149,7 @@ class Questions extends React.Component {
           <div class="body">
             {
               FILTERS.map((filter) => (
-                <div className="filter" onClick={() => this.handleFilter(filter)}>{filter}</div>))
+                <div className={`filter ${this.state.currentFilter === filter ? 'active': ''}`} onClick={() => this.handleFilter(filter)}>{filter}</div>))
             }
           </div>
         </div>
@@ -154,10 +164,10 @@ class Questions extends React.Component {
           {
             this.state.questions.length ? this.state.questions.map((question) => (
               <Question key={question.id} question={question} user={this.props.currentUser}/>
-            )) : "cdscdcd"
+            )) : <div className="loading">No Question yet</div>
           }
 
-          { this.state.createQuestion ? <NewQuestion createQuestion={(questionObj) => this.createQuestion(questionObj)}/> : null }
+          { this.state.createQuestion ? <NewQuestion createQuestion={(questionObj) => this.createQuestion(questionObj)} closeModal={() => {this.closeModal()}}/> : null }
         </div>
       </div>
     )

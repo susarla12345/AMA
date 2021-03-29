@@ -23,7 +23,7 @@ class NewQuestion extends React.Component {
       'description': '',
       'anonymous': true,
       'sessionId': "zTcBDjlKn9gO6iVM1Xf2",
-      'tags': []
+      'tags': []    
     }
   }
 
@@ -54,7 +54,8 @@ class NewQuestion extends React.Component {
 
   render() {
     return (
-        <ModalOverlay title="Ask a question">
+        <ModalOverlay title="Ask a question"
+        closeModal={() => this.props.closeModal()}>
           <div className="new-question-wrapper">
             <FormInput name="title" type="text" placeholder="enter question title" onChange={(event) => this.changeTitle(event)}/>
             <FormInput name="description" type="text" placeholder="enter question description" onChange={(event) => this.changeDescription(event)}/>

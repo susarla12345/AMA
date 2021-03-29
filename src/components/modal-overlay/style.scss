@@ -11,6 +11,11 @@
     align-items: center;
     justify-content: center;
     background-color: rgba(18, 52, 77, 0.5);
+
+    svg {
+        height: 28px;
+        width: 28px;
+    }
 }
 
 .modal-wrapper {
@@ -23,17 +28,11 @@
     width: 800px;
 }
 
-.close-modal {
-    svg {
-        height: 28px;
-        width: 28px;
-    }
-}
-
 .modal {
     &--header {
         display: flex;
         padding: 24px 24px 0;
+        justify-content: space-between;
     }
 
     &--body {
@@ -54,12 +53,6 @@
     }
 
     .close-button {
-        background: none;
-        border: none;
-        position: absolute;
-        top: 0;
-        right: 0px;
-
         &:hover {
             cursor: pointer;
         }
