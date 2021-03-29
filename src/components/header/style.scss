@@ -1,0 +1,14 @@
+.main-header {
+  position: fixed;
+  width: 98%;
+  background: #1A283A;
+  color: #fff;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 15px;
+  z-index: 101;
+
+  .header-item {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,145 @@
+.questions-wrapper {
+  width: 60%;
+
+  .question-wrapper {
+    padding: 20px;
+    background: #fff;
+
+    .author-details {
+      font-size: 11px;
+    }
+
+    .description {
+      font-size: 13px;
+      word-wrap: break-word;
+      margin-bottom: 0;
+    }
+
+    .author-name {
+      color: #295a9b;
+      font-weight: 600;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 3px 10px 4px;
+      margin: 0 3px 3px 0;
+      border: 1px solid #eaeaea;
+      border-radius: 2px;
+      font-size: 12px;
+      color: #999;
+      background: #fdfdfd;
+      line-height: normal;
+    }
+
+    .voting-section {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin: 12px 12px 0;
+    }
+
+    .like,
+    .dislike {
+      svg {
+        height: 16px;
+        width: 16px;
+        position: relative;
+        top: 2px;
+      }
+    }
+
+    .like {
+      &.liked {
+        svg {
+          #ico-like {
+            fill: green;
+          }
+        }
+      }
+    }
+
+    .dislike {
+      &.disliked {
+        svg {
+          #ico-unlike {
+            fill: red;
+          }
+        }
+      }
+    }
+  }
+
+  .votes {
+    background: #efefef;
+    padding: 3px 6px;
+    border-radius: 0;
+    font-size: 11px;
+    margin-right: 5px;
+    color: #555;
+  }
+
+  .likes-count,
+  .dislikes-count {
+    font-size: 12px;
+    color: #888;
+  }
+
+  .created-on {
+    color: #999;
+  }
+}
+
+.new-question-wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.create-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .sort-options {
+    font-size: 12px;
+    cursor: pointer;
+  }
+}
+
+.filters {
+  width: 18%;
+  margin-top: 4%;
+  margin-left: 3%;
+  height: 20%;
+
+  .title {
+    color: #768b95;
+  }
+  
+  .body {
+    display: flex;   
+    flex-wrap: wrap;
+  }
+
+  .filter {
+    padding: 4px 10px 3px;
+    border: 1px solid #dedede;
+    font-size: 12px;
+    color: #777;
+    background: transparent;
+    margin: 0 3px 3px 0;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+}
+
+.questions-page {
+  display: flex;
+}
+
+.reset-filter {
+  font-size: 12px;
+  color: #4caf50;
+  font-weight: 600;
+  cursor: pointer;
+}

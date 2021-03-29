@@ -1,0 +1,44 @@
+.button {
+  font-size: 14px;
+  vertical-align: middle;
+  line-height: 1.2;
+  padding: 6px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  outline: 0;
+  color: #264966;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  letter-spacing: 0.3px;
+  font-weight: 500;
+  height: 32px;
+  min-width: 80px;
+
+  &--primary {
+      background-color: #264966;
+      color: white;
+      border: 1px solid #12344d;
+      background-image: linear-gradient(to bottom, #264966, #12344d);
+  }
+
+  &--secondary {
+      background-color: #f3f5f7;
+      color: #12344d;
+      border: 1px solid #cfd7df;
+      background-image: linear-gradient(to bottom, white, #f3f5f7);
+  }
+
+  &--link {
+      background: none;
+      padding: 0;
+      font-size: 12px;
+      margin: 0;
+      justify-content: left;
+      align-items: start;
+      color: #2c5cc5;
+      font-weight: 400;
+  }
+}
